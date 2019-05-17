@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nepali News Classifier</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+</head>
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand md-0 h1"> Nepali News Classifier</span>
+</nav>
+<body>
+<br/>
+<br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <form action="/classify" method="GET">
+                    <input type="submit" class="btn btn-primary" value="Classify">
+                </form>
+            </div>
+            {% if predictedClass %}
+            <div id="result" class="col-md-2">
+                Result: {{ predictedClass }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+<br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <textarea class="form-control" rows="20"></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
